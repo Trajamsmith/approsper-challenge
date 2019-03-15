@@ -1,10 +1,12 @@
+require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-require("dotenv").config();
+const testDB = require("./db/testDB");
 
 const app = express();
 const port = 3000;
+testDB();
 
 app.use(morgan("combined"));
 app.use(bodyParser());
